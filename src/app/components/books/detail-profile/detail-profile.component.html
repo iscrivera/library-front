@@ -1,0 +1,21 @@
+<h1 mat-dialog-title>Profile</h1>
+<div mat-dialog-content class="example-card">
+    <mat-card>
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-image">
+                <mat-icon>account_circle</mat-icon>
+            </div>
+            <mat-card-title>{{user.ds_name}} {{user.ds_last_name}} </mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <mat-list>
+                <mat-list-item>Email</mat-list-item>
+                <mat-card-subtitle>{{user.ds_email}}</mat-card-subtitle>
+                <mat-divider></mat-divider>
+                <mat-list-item>Phone</mat-list-item>
+                <mat-card-subtitle>{{user.ds_phone}}</mat-card-subtitle>
+                <mat-divider></mat-divider>
+            </mat-list>
+        </mat-card-content>
+    </mat-card>
+</div>

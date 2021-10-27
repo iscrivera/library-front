@@ -1,0 +1,54 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="app-header">
+  <div><a target="_blank" class="positronx">Library Angular Material</a></div>
+  <span class="nav-tool-items">
+    <a mat-button routerLink="../login" routerLinkActive="active">Log in</a>
+    <a mat-button mat-raised-button routerLink="../register" routerLinkActive="active">Register</a>
+  </span>
+</mat-toolbar>
+
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="box">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+
+    <form class="register-form">
+
+      <mat-card-content>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Name" [(ngModel)]='user.ds_name' name="name">
+        </mat-form-field>
+
+        
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Last Name" [(ngModel)]='user.ds_last_name' name="last_name">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email" [(ngModel)]='user.ds_email' name="email">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input type="tel" maxlength="10" matInput placeholder="Cellphone" [(ngModel)]='user.ds_phone' name="phone">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" [(ngModel)]='user.ds_password' name="password">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+        
+        <mat-error *ngIf="hasError">
+          <strong>{{errorMsg}}</strong>
+        </mat-error>
+
+      </mat-card-content>
+
+      <button mat-stroked-button color="primary" class="btn-block" (click)="createUser()">Register</button>
+
+    </form>
+  </mat-card>
+</div>

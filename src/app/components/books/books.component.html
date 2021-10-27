@@ -1,0 +1,26 @@
+<!-- Toolbar -->
+<mat-toolbar color="primary" class="app-header">
+    <div><a target="_blank" class="positronx">Library Angular Material</a></div>
+    <span class="nav-tool-items">
+        <a (click)="logout()" mat-button>Log Out</a>
+        <a (click)="profile()"  mat-mini-fab color="accent" matTooltip="View profile"><mat-icon>account_circle</mat-icon></a>
+       
+    </span>
+</mat-toolbar>
+
+<div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="flex-start" class="margin-cards">
+
+    <mat-card *ngFor="let book of books" fxFlex="0 1 calc(16.6% - 10px)">
+        <mat-card-header>
+            <mat-card-title>{{book.ds_title}}</mat-card-title>
+        </mat-card-header>
+        <a mat-button (click)="detail(book.id_book)" matTooltip="View detail">
+            <img mat-card-image class="img-sm" src="{{book.ds_img}}">
+        </a> 
+        <mat-card-content>
+            <p>
+                {{book.ds_author}}
+            </p>
+        </mat-card-content>
+    </mat-card>
+</div>

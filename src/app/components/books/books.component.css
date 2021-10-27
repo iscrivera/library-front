@@ -1,0 +1,45 @@
+.content {
+    padding: 16px;
+}
+
+.margin-cards > mat-card {
+    margin-bottom: 5px;
+    padding: 40px;
+    text-align: center;
+}
+
+.margin-cards mat-card-header {
+    text-align: center;
+    width: 100%;
+    display: block;
+    font-weight: 700;
+    height: 60px;
+}
+
+.img-sm{
+    width: 120px;
+    margin: 5px;
+}
+
+.margin-cards{
+    margin-top: 85px;
+    margin-left: 15px;
+}
+
+.cardList {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  /* Column Gap */
+  .cardList > * {
+    box-sizing: border-box;
+  }
+  .cardList > *:not(:last-child) {
+    margin-right: 10px;
+  }
+  /* Item sizing */
+  .cardListItem {
+    flex: 0 1 calc(16.6% - 10px);
+  }
